@@ -1,0 +1,505 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --primary: #b88e2f;
+}
+
+/* Header Section */
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px 77px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 30px;
+}
+
+.logo h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+  column-gap: 45px;
+}
+
+.nav-bar .hvr-link {
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.nav-bar .hvr-link:hover {
+  color: gray;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  column-gap: 20px;
+}
+
+.icons button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.icons button:hover {
+  color: gray;
+}
+
+/* Footer Section */
+
+.footer-container {
+  background-color: #d9d9d9;
+  padding: 50px 77px;
+}
+
+.footer-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.footer-brand h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.footer-brand address {
+  font-style: normal;
+  line-height: 1.5;
+}
+
+.footer-links,
+.footer-help,
+.footer-newsletter {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-links h3,
+.footer-help h3,
+.footer-newsletter h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer-links a,
+.footer-help a {
+  text-decoration: none;
+  color: black;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.footer-newsletter input {
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+.footer-newsletter button {
+  padding: 10px 20px;
+  border: none;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.footer-bottom {
+  border-top: 1px solid #e1e1e1;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: #777;
+  font-size: 14px;
+}
+
+.hvr-link {
+  position: relative;
+}
+
+.hvr-link::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: #000000;
+  transition: all 0.5s ease-in-out;
+}
+
+.hvr-link:hover::before {
+  right: auto;
+  left: 0;
+  width: 100%;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Home Page */
+
+.home-container {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Adjust height as needed */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  overflow: hidden; /* Ensure content stays within the container */
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1; /* Ensure the image is behind the text */
+}
+
+.homeInfo {
+  width: 463px;
+  height: 350px;
+  background-color: #fff3e3;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-right: 100px;
+}
+
+.homeInfo h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  padding-top: 10px;
+}
+
+.homeInfo h1 {
+  font-size: 45px;
+  color: var(--primary);
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.homeInfo p {
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+.homeInfo button {
+  background-color: var(--primary);
+  color: white;
+  border: 1px solid var(--primary);
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.homeInfo button {
+  width: 220px;
+  height: 70px;
+}
+
+.homeInfo button {
+  transition: color 0.3s ease-in-out, background-color 0.3s ease,
+    border 0.3s ease;
+}
+
+.homeInfo button:hover {
+  color: var(--primary);
+  background-color: #fff3e3;
+  border: 1px solid var(--primary);
+}
+
+/* Browse Section */
+
+.browse-container {
+  text-align: center;
+  padding: 70px 0;
+}
+
+.browse h3 {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.browse p {
+  color: #666666;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.category-container {
+  margin-top: 65px;
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+}
+
+.category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.category img {
+  width: 300px;
+  height: 375px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.category h4 {
+  font-size: 18px;
+  color: #333;
+  margin-top: 10px;
+}
+
+/* Our Products Section */
+
+.products-container {
+  text-align: center;
+  padding: 50px 0;
+}
+
+.products-container h3 {
+  font-size: 30px;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  justify-items: center;
+  padding: 60px;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #eee;
+  overflow: hidden;
+  position: relative;
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.product-card:hover {
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  transform: scale(1.02);
+}
+
+.product-image-container {
+  position: relative;
+  width: 100%;
+  height: 370px;
+  overflow: hidden;
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.discount-badge,
+.new-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #e97171;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 50%;
+  font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 35px;
+  height: 35px;
+  text-align: center;
+}
+
+.new-badge {
+  background-color: #00c853;
+}
+
+.product-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.product-card:hover .product-hover {
+  opacity: 1;
+}
+
+.add-to-cart {
+  background-color: #ffffff;
+  color: var(--primary);
+  border: none;
+  width: 200px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+  transition: 0.3s ease-in-out;
+  font-weight: 600;
+}
+
+.add-to-cart:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+.hover-actions {
+  display: flex;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.hover-actions span {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.hover-actions span::before {
+  content: attr(data-icon);
+  margin-right: 5px; /* Space between icon and text */
+}
+
+.product-card h4 {
+  font-size: 18px;
+  color: #333;
+  margin: 15px 10px 5px;
+}
+
+.product-card p {
+  font-size: 16px;
+  color: #666;
+  margin: 5px 10px;
+}
+
+.product-price {
+  font-size: 18px;
+  color: #333;
+  margin: 10px 10px 15px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #999;
+  margin-left: 10px;
+}
+
+.show-more {
+  color: var(--primary);
+  border: 1px solid var(--primary);
+  background-color: white;
+  padding: 10px 20px;
+  width: 170px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease,
+    border 0.3s ease;
+}
+
+.show-more:hover {
+  background-color: var(--primary);
+  color: white;
+}
+
+/*  room inspiration section */
+
+.room-inspiration-container {
+  height: 670px;
+  background-color: #fcf8f3;
+}
+
+.room-inspiration {
+  display: flex;
+  width: 533px;
+  flex-direction: column;
+  text-align: left;
+  padding: 220px 0 0 100px;
+}
+
+.room-inspiration h3 {
+  font-size: 40px;
+}
+
+.room-inspiration p {
+  font-size: 16px;
+}
+
+.explore-button {
+  background-color: var(--primary);
+  color: white;
+  border: 1px solid var(--primary);
+  padding: 10px 20px;
+  width: 170px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.3s ease-in-out, background-color 0.3s ease,
+    border 0.3s ease;
+}
+
+.explore-button:hover {
+  background-color: #fcf8f3;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.room-inspiration-container .explore-button {
+  margin: 25px 0 0 100px;
+}
