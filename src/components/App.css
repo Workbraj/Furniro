@@ -12,7 +12,8 @@ html {
 }
 
 :root {
-  --primary: #b88e2f;
+  --primary-color: #b88e2f;
+  --secondary-color: #fff3e3;
 }
 
 /* Header Section */
@@ -172,11 +173,11 @@ html {
 .home-container {
   position: relative;
   width: 100%;
-  height: 100vh; /* Adjust height as needed */
+  height: 100vh;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  overflow: hidden; /* Ensure content stays within the container */
+  overflow: hidden;
 }
 
 .background-image {
@@ -186,13 +187,13 @@ html {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1; /* Ensure the image is behind the text */
+  z-index: -1;
 }
 
 .homeInfo {
   width: 463px;
   height: 350px;
-  background-color: #fff3e3;
+  background-color: var(--secondary-color);
   padding: 40px;
   display: flex;
   flex-direction: column;
@@ -210,7 +211,7 @@ html {
 
 .homeInfo h1 {
   font-size: 45px;
-  color: var(--primary);
+  color: var(--primary-color);
   margin-bottom: 20px;
   font-weight: 700;
 }
@@ -220,9 +221,9 @@ html {
   margin-bottom: 20px;
 }
 .homeInfo button {
-  background-color: var(--primary);
+  background-color: var(--primary-color);
   color: white;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--primary-color);
   padding: 10px 20px;
   cursor: pointer;
   font-size: 16px;
@@ -239,9 +240,9 @@ html {
 }
 
 .homeInfo button:hover {
-  color: var(--primary);
   background-color: #fff3e3;
-  border: 1px solid var(--primary);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
 }
 
 /* Browse Section */
@@ -384,7 +385,7 @@ html {
 
 .add-to-cart {
   background-color: #ffffff;
-  color: var(--primary);
+  color: var(--primary-color);
   border: none;
   width: 200px;
   padding: 10px 20px;
@@ -396,7 +397,7 @@ html {
 }
 
 .add-to-cart:hover {
-  background-color: var(--primary);
+  background-color: var(--primary-color);
   color: white;
 }
 
@@ -442,8 +443,8 @@ html {
 }
 
 .show-more {
-  color: var(--primary);
-  border: 1px solid var(--primary);
+  color: var(--primary-color);
+  border: 1px solid var(--primary-color);
   background-color: white;
   padding: 10px 20px;
   width: 170px;
@@ -455,51 +456,6 @@ html {
 }
 
 .show-more:hover {
-  background-color: var(--primary);
+  background-color: var(--primary-color);
   color: white;
-}
-
-/*  room inspiration section */
-
-.room-inspiration-container {
-  height: 670px;
-  background-color: #fcf8f3;
-}
-
-.room-inspiration {
-  display: flex;
-  width: 533px;
-  flex-direction: column;
-  text-align: left;
-  padding: 220px 0 0 100px;
-}
-
-.room-inspiration h3 {
-  font-size: 40px;
-}
-
-.room-inspiration p {
-  font-size: 16px;
-}
-
-.explore-button {
-  background-color: var(--primary);
-  color: white;
-  border: 1px solid var(--primary);
-  padding: 10px 20px;
-  width: 170px;
-  cursor: pointer;
-  font-size: 16px;
-  transition: color 0.3s ease-in-out, background-color 0.3s ease,
-    border 0.3s ease;
-}
-
-.explore-button:hover {
-  background-color: #fcf8f3;
-  color: var(--primary);
-  border: 1px solid var(--primary);
-}
-
-.room-inspiration-container .explore-button {
-  margin: 25px 0 0 100px;
 }

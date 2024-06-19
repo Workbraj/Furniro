@@ -1,0 +1,124 @@
+.carousel-section {
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 40px 20px;
+  background-color: #fcf8f3;
+  margin: auto;
+}
+
+.carousel-text {
+  width: 450px;
+  padding: 225px 0 0 100px;
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.carousel-text h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.carousel-text p {
+  font-size: 18px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.explore-button {
+  background-color: #b88e2f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.explore-button {
+  background-color: #a5752d;
+}
+
+.carousel-slider {
+  width: 1200px;
+}
+
+.carousel-image-container {
+  position: relative;
+  overflow: hidden;
+  padding: 15px;
+  transition: height 0.3s ease;
+}
+
+.carousel-image-container.active {
+  height: 582px; /* Increased height */
+}
+
+.carousel-image-container:not(.active) {
+  height: 400px; /* Decreased height for other slides */
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel-caption {
+  height: 130px;
+  width: 215px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: black;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  margin: 0 0 25px 25px;
+}
+
+.carousel-index {
+  font-size: 14px;
+  padding: 30px 0 0 30px;
+}
+
+.carousel-title {
+  font-size: 24px;
+  margin-top: 5px;
+}
+
+.carousel-title {
+  padding: 30px 15px 10px;
+}
+
+/* Custom arrow styling */
+.custom-next-arrow {
+  background-color: #b88e2f;
+  color: white;
+  border: none;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  cursor: pointer;
+  position: absolute;
+  right: -45px;
+  top: 83%;
+  transform: translateY(-50%);
+}
+
+.custom-next-arrow:hover {
+  background-color: #a5752d;
+}
+
+/* Positioning the slick dots */
+.slick-dots {
+  bottom: 20px;
+}
+
+.slick-dots li {
+  position: relative;
+  display: inline-block;
+}

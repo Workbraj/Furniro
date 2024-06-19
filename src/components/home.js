@@ -1,5 +1,7 @@
 import React from "react";
 import "./App.css";
+import CarouselSection from "./CarouselSection";
+import SetupSection from "./SetupSection";
 import HomePage from "./image/homepage.png";
 import DiningImage from "./image/dinning.png";
 import LivingImage from "./image/living-room.png";
@@ -100,6 +102,7 @@ const Home = () => {
           <button>Buy Now</button>
         </div>
       </div>
+
       <div className="browse-container">
         <div className="browse">
           <h3>Browse The Range</h3>
@@ -156,20 +159,10 @@ const Home = () => {
             ))}
           </div>
           <button className="show-more">Show More</button>
-        </div>{" "}
+        </div>
       </div>
-
-      {/* Room Inspiration Section */}
-      <div className="room-inspiration-container">
-        <div className="room-inspiration">
-          <h3>50+ Beautiful rooms inspiration</h3>
-          <p>
-            Our designer already made a lot of beautiful prototipe of rooms that
-            inspire you
-          </p>
-        </div>{" "}
-        <button className="explore-button">Explore More</button>
-      </div>
+      <CarouselSection />
+      <SetupSection />
     </>
   );
 };
