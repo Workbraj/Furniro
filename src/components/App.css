@@ -76,8 +76,9 @@ html {
 /* Footer Section */
 
 .footer-container {
-  background-color: #d9d9d9;
-  padding: 50px 77px;
+  height: 500px;
+  margin-top: 60px;
+  padding: 38px 100px 38px 100px;
 }
 
 .footer-section {
@@ -92,8 +93,13 @@ html {
 }
 
 .footer-brand address {
+  padding-top: 50px;
   font-style: normal;
   line-height: 1.5;
+  color: #9f9f9f;
+}
+.footer-links {
+  display: inline;
 }
 
 .footer-links,
@@ -101,6 +107,7 @@ html {
 .footer-newsletter {
   display: flex;
   flex-direction: column;
+  gap: 45px;
 }
 
 .footer-links h3,
@@ -108,6 +115,8 @@ html {
 .footer-newsletter h3 {
   font-size: 18px;
   margin-bottom: 10px;
+  color: #9f9f9f;
+  font-weight: 500;
 }
 
 .footer-links a,
@@ -116,34 +125,40 @@ html {
   color: black;
   margin-bottom: 5px;
   font-size: 16px;
+  font-weight: 600;
+}
+.footer-newsletter {
+  column-gap: 20px;
 }
 
 .footer-newsletter input {
   padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
+  margin-top: 20px;
+  border: none;
+  border-bottom: 2px solid #000000;
   font-size: 16px;
 }
 
 .footer-newsletter button {
-  padding: 10px 20px;
-  border: none;
-  background-color: black;
-  color: white;
   cursor: pointer;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: white;
+  border: none;
+  border-bottom: 2px solid #000000;
   font-size: 16px;
 }
 
 .footer-bottom {
   border-top: 1px solid #e1e1e1;
-  padding-top: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .footer-bottom p {
   margin: 0;
   color: #777;
   font-size: 14px;
+  padding-top: 35px;
 }
 
 .hvr-link {
@@ -220,6 +235,8 @@ html {
   font-size: 13px;
   margin-bottom: 20px;
 }
+
+.primary-button,
 .homeInfo button {
   background-color: var(--primary-color);
   color: white;
@@ -234,11 +251,13 @@ html {
   height: 70px;
 }
 
+.primary-button,
 .homeInfo button {
   transition: color 0.3s ease-in-out, background-color 0.3s ease,
     border 0.3s ease;
 }
 
+.primary-button:hover,
 .homeInfo button:hover {
   background-color: #fff3e3;
   color: var(--primary-color);
@@ -458,4 +477,31 @@ html {
 .show-more:hover {
   background-color: var(--primary-color);
   color: white;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 20px;
+}
+
+.breadcrumb a {
+  color: #333;
+  text-decoration: none;
+  margin-right: 5px;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb a::after {
+  content: ">";
+  margin-left: 5px;
+  color: #333;
+}
+
+.breadcrumb span {
+  margin-left: 5px;
 }

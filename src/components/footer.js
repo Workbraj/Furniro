@@ -1,7 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import "./App.css";
 
 const Footer = () => {
+  const [email, setEmail] = useState("");
+
+  const handleEmailSubmit = (event) => {
+    event.preventDefault();
+    console.log("Email submitted:", email);
+    alert(`Email submitted: ${email}`);
+    setEmail("");
+  };
   return (
     <div className="footer-container">
       <div className="footer-section">
@@ -15,35 +23,43 @@ const Footer = () => {
         </div>
         <div className="footer-links">
           <h3>Links</h3>
-          <a className="hver-link" href="/">
+          <a className="link" href="/">
             Home
           </a>
-          <a className="hver-link" href="/">
+          <a className="link" href="/">
             Shop
           </a>
-          <a className="hver-link" href="/">
+          <a className="link" href="/">
             About
           </a>
-          <a className="hver-link" href="/">
+          <a className="link" href="/">
             Contact
           </a>
         </div>
         <div className="footer-help">
           <h3>Help</h3>
-          <a className="hver-link" href="/">
+          <a className="link" href="/">
             Payment Options
           </a>
-          <a className="hver-link" href="/">
+          <a className="link" href="/">
             Returns
           </a>
-          <a className="hver-link" href="/">
+          <a className="link" href="/">
             Privacy Policies
           </a>
         </div>
         <div className="footer-newsletter">
-          <h3>Newsletter</h3>
-          <input type="email" placeholder="Enter Your Email Address" />
-          <button>SUBSCRIBE</button>
+          <form onSubmit={handleEmailSubmit}>
+            <h3>Newsletter</h3>
+            <input
+              type="email"
+              placeholder="Enter Your Email Address"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+            <button type="submit">SUBSCRIBE</button>
+          </form>
         </div>
       </div>
       <div className="footer-bottom">

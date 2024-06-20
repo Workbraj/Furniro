@@ -46,7 +46,7 @@ const CarouselSection = () => {
           Our designer already made a lot of beautiful prototypes of rooms that
           inspire you
         </p>
-        <button className="explore-button">Explore More</button>
+        <button className="primary-button">Explore More</button>
       </div>
       <Slider
         ref={(c) => (sliderRef = c)}

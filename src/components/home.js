@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./App.css";
+
 import CarouselSection from "./CarouselSection";
 import SetupSection from "./SetupSection";
 import HomePage from "./image/homepage.png";
@@ -14,6 +15,10 @@ import ProductImage5 from "./image/product5.png";
 import ProductImage6 from "./image/product6.png";
 import ProductImage7 from "./image/product7.png";
 import ProductImage8 from "./image/product8.png";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const products = [
   {
@@ -84,11 +89,49 @@ const products = [
 ];
 
 const Home = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 1200,
+      easing: "ease-in-out",
+      once: false,
+      mirror: false,
+      offset: 100,
+    });
+  }, []);
+
+  const handleBuyNow = () =>
+    toast.success("Thankyou For Buying!", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "dark",
+    });
+
   return (
     <>
       <div className="home-container">
+        <ToastContainer
+          position="top-center"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss={false}
+          draggable
+          pauseOnHover={false}
+          theme="dark"
+        />
         <img src={HomePage} alt="Home Page" className="background-image" />
-        <div className="homeInfo">
+        <div
+          className="homeInfo"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+        >
           <h3>New Arrival</h3>
           <h1>
             Discover Our
@@ -99,11 +142,15 @@ const Home = () => {
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
             tellus, luctus nec ullamcorper mattis.
           </p>
-          <button>Buy Now</button>
+          <button onClick={handleBuyNow}>Buy Now</button>
         </div>
       </div>
 
-      <div className="browse-container">
+      <div
+        className="browse-container"
+        data-aos="fade-up"
+        data-aos-anchor-placement="top-bottom"
+      >
         <div className="browse">
           <h3>Browse The Range</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
@@ -123,11 +170,21 @@ const Home = () => {
           </div>
         </div>
         {/* Our Products Section */}
-        <div className="products-container">
+        <div
+          id="Product"
+          className="products-container"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-bottom"
+        >
           <h3>Our Products</h3>
           <div className="products-grid">
             {products.map((product) => (
-              <div key={product.id} className="product-card">
+              <div
+                key={product.id}
+                className="product-card"
+                data-aos="fade-up"
+                data-aos-anchor-placement="top-bottom"
+              >
                 <div className="product-image-container">
                   <img
                     src={product.image}

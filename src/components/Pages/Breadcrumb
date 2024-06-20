@@ -1,0 +1,42 @@
+import React, { useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
+
+const Breadcrumb = () => {
+  const location = useLocation();
+  const previousPageRef = useRef();
+
+  useEffect(() => {
+    previousPageRef.current = location.pathname;
+  }, [location.pathname]);
+
+  const getBreadcrumbName = (pathname) => {
+    switch (pathname) {
+      case "/":
+        return "Home";
+      case "/shop":
+        return "Shop";
+      case "/about":
+        return "About";
+      case "/contact":
+        return "Contact";
+      default:
+        return "";
+    }
+  };
+
+  const currentPathName = getBreadcrumbName(location.pathname);
+  const previousPathName = getBreadcrumbName(previousPageRef.current);
+
+  return (
+    <div className="breadcrumb">
+      {previousPathName && previousPathName !== currentPathName && (
+        <>
+          <Link to={previousPageRef.current}>{previousPathName}</Link> &gt;
+        </>
+      )}
+      <span>{currentPathName}</span>
+    </div>
+  );
+};
+
+export default Breadcrumb;
