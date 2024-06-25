@@ -331,7 +331,7 @@ html {
 }
 
 .product-card {
-  background-color: #fff;
+  background-color: #f4f5f7;
   border: 1px solid #eee;
   overflow: hidden;
   position: relative;
@@ -482,8 +482,10 @@ html {
 .breadcrumb {
   display: flex;
   align-items: center;
+  justify-content: center;
   font-size: 14px;
   margin-top: 20px;
+  font-weight: 500;
 }
 
 .breadcrumb a {
@@ -493,13 +495,12 @@ html {
 }
 
 .breadcrumb a:hover {
-  text-decoration: underline;
+  font-weight: bold;
 }
 
 .breadcrumb a::after {
-  content: ">";
   margin-left: 5px;
-  color: #333;
+  color: #000000;
 }
 
 .breadcrumb span {

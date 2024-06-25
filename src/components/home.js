@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import "./App.css";
-
+import { useNavigate } from "react-router-dom";
 import CarouselSection from "./CarouselSection";
 import SetupSection from "./SetupSection";
 import HomePage from "./image/homepage.png";
@@ -25,8 +25,8 @@ const products = [
     id: 1,
     name: "Syltherine",
     description: "Stylish cafe chair",
-    price: "Rp 2.500.000",
-    oldPrice: "Rp 3.500.000",
+    price: "Rs 2.500.000",
+    oldPrice: "Rs 3.500.000",
     discount: "30%",
     image: ProductImage1,
   },
@@ -34,15 +34,15 @@ const products = [
     id: 2,
     name: "Leviosa",
     description: "Stylish cafe chair",
-    price: "Rp 2.500.000",
+    price: "Rs 2.500.000",
     image: ProductImage2,
   },
   {
     id: 3,
     name: "Lolito",
     description: "Luxury big sofa",
-    price: "Rp 7.000.000",
-    oldPrice: "Rp 14.000.000",
+    price: "Rs 7.000.000",
+    oldPrice: "Rs 14.000.000",
     discount: "50%",
     image: ProductImage3,
   },
@@ -50,7 +50,7 @@ const products = [
     id: 4,
     name: "Respira",
     description: "Outdoor bar table and stool",
-    price: "Rp 500.000",
+    price: "Rs 500.000",
     new: true,
     image: ProductImage4,
   },
@@ -58,14 +58,14 @@ const products = [
     id: 5,
     name: "Grifo",
     description: "Night lamp",
-    price: "Rp 1.500.000",
+    price: "Rs 1.500.000",
     image: ProductImage5,
   },
   {
     id: 6,
     name: "Muggo",
     description: "Small mug",
-    price: "Rp 150.000",
+    price: "Rs 150.000",
     new: true,
     image: ProductImage6,
   },
@@ -73,8 +73,8 @@ const products = [
     id: 7,
     name: "Pingky",
     description: "Cute bed set",
-    price: "Rp 7.000.000",
-    oldPrice: "Rp 14.000.000",
+    price: "Rs 7.000.000",
+    oldPrice: "Rs 14.000.000",
     discount: "50%",
     image: ProductImage7,
   },
@@ -82,13 +82,15 @@ const products = [
     id: 8,
     name: "Potty",
     description: "Minimalist flower pot",
-    price: "Rp 500.000",
+    price: "Rs 500.000",
     new: true,
     image: ProductImage8,
   },
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
+
   useEffect(() => {
     AOS.init({
       duration: 1200,
@@ -110,6 +112,10 @@ const Home = () => {
       progress: undefined,
       theme: "dark",
     });
+
+  const goToProductPage = (id) => {
+    navigate(`/product/${id}`);
+  };
 
   return (
     <>
@@ -184,6 +190,7 @@ const Home = () => {
                 className="product-card"
                 data-aos="fade-up"
                 data-aos-anchor-placement="top-bottom"
+                onClick={() => goToProductPage(product.id)}
               >
                 <div className="product-image-container">
                   <img

@@ -7,18 +7,20 @@ import Header from "./components/header";
 import HomePage from "./components/home";
 import Footer from "./components/footer";
 import ProductPage from "./components/Pages/ProductPage";
-// import AboutPage from "./Pages/AboutPage";
-// import ContactPage from "./Pages/ContactPage";
+import AboutPage from "./components/Pages/AboutPage";
+import ContactPage from "./components/Pages/ContactPage";
+import SingleProductPage from "./components/Pages/SingleProductPage";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
       <Routes>
+        <Route path="/product/:id" element={<SingleProductPage />} />
         <Route path="/" element={<HomePage />} />
         <Route path="/product" element={<ProductPage />} />
-        {/* <Route path="/" element={<AboutPage />} />
-<Route path="/" element={<ContactPage />} /> */}
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <Footer />
     </BrowserRouter>

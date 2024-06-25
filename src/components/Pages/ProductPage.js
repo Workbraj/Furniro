@@ -11,7 +11,7 @@ import ProductImage6 from "./images/Product/product6.png";
 import ProductImage7 from "./images/Product/product7.png";
 import ProductImage8 from "./images/Product/product8.png";
 import PageInfoImage from "./images/Pageinfo.png";
-// import Breadcrumb from "./Breadcrumb";
+import Breadcrumb from "./Breadcrumb";
 
 const products = [
   {
@@ -187,7 +187,7 @@ const ProductPage = () => {
         if (filtersToApply.priceRange === "low") return price < 1000000;
         if (filtersToApply.priceRange === "medium")
           return price >= 1000000 && price < 5000000;
-        if (filtersToApply.priceRange === "high") return price >= 5000000;
+        if (filtersToApply.priceRange === "high") return price >= 7000000;
         return true;
       });
     }
@@ -227,7 +227,7 @@ const ProductPage = () => {
       <div className="page-info">
         <img src={PageInfoImage} alt="Page Info" />
         <h2>Shop</h2>
-        {/* <Breadcrumb /> */}
+        <Breadcrumb />
       </div>
       <div className="filter-sort-container">
         <div className="filter-tab">
