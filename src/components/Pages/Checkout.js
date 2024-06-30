@@ -2,24 +2,14 @@ import React, { useState } from "react";
 import "./Checkout.css";
 import PageInfoImage from "./images/Pageinfo.png";
 import Breadcrumb from "./Breadcrumb";
-import ProductImage1 from "./images/Product/product1.png";
-import ProductImage2 from "./images/Product/product2.png";
-import ProductImage3 from "./images/Product/product3.png";
-import ProductImage4 from "./images/Product/product4.png";
-import ProductImage5 from "./images/Product/product5.png";
-import ProductImage6 from "./images/Product/product6.png";
-import ProductImage7 from "./images/Product/product7.png";
-import ProductImage8 from "./images/Product/product8.png";
 
 const products = [
-  { id: 1, name: "Syltherine", price: "Rs 2.500.000", image: ProductImage1 },
-  { id: 2, name: "Leviosa", price: "Rs 2.500.000", image: ProductImage2 },
-  { id: 3, name: "Lolito", price: "Rs 7.000.000", image: ProductImage3 },
-  { id: 4, name: "Respira", price: "Rs 500.000", image: ProductImage4 },
-  { id: 5, name: "Grifo", price: "Rs 1.500.000", image: ProductImage5 },
-  { id: 6, name: "Muggo", price: "Rs 150.000", image: ProductImage6 },
-  { id: 7, name: "Pingky", price: "Rs 7.000.000", image: ProductImage7 },
-  { id: 8, name: "Potty", price: "Rs 500.000", image: ProductImage8 },
+  { id: 1, name: "Syltherine", price: "Rs 2.500.000" },
+  { id: 2, name: "Leviosa", price: "Rs 2.500.000" },
+  { id: 3, name: "Lolito", price: "Rs 7.000.000" },
+  { id: 4, name: "Respira", price: "Rs 500.000" },
+  { id: 5, name: "Grifo", price: "Rs 1.500.000" },
+  { id: 6, name: "Muggo", price: "Rs 150.000" },
 ];
 
 const BillingDetails = ({ products }) => {
