@@ -23,7 +23,7 @@ const Breadcrumb = () => {
   };
 
   const pathnames = location.pathname.split("/").filter((x) => x);
-  const previousPathnames = previousPageRef.current.split("/").filter((x) => x);
+  // const previousPathnames = previousPageRef.current.split("/").filter((x) => x);
 
   return (
     <div className="breadcrumb">

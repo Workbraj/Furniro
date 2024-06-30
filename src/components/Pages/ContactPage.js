@@ -1,5 +1,4 @@
 import React from "react";
-import "./ContactPage.css";
 import PageInfoImage from "./images/Pageinfo.png";
 import Breadcrumb from "./Breadcrumb";
 

@@ -1,5 +1,4 @@
 import React from "react";
-import "./AboutPage.css";
 import PageInfoImage from "./images/Pageinfo.png";
 import Breadcrumb from "./Breadcrumb";
 

@@ -1,0 +1,128 @@
+.checkout-container {
+  margin: 65px 100px 50px 100px;
+  display: flex;
+  gap: 20px;
+}
+
+.billing-details,
+.order-summary {
+  width: 600px;
+  padding: 20px;
+}
+
+.billing-details {
+  padding: 35px 70px 35px 70px;
+}
+
+.name {
+  display: flex;
+  gap: 30px;
+}
+
+.billing-details h2 {
+  font-size: 30;
+  font-weight: 600;
+  margin-bottom: 35px;
+}
+
+.billing-details label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.billing-details input[type="text"],
+.billing-details input[type="email"],
+.billing-details textarea,
+.billing-details select {
+  width: 100%;
+  height: 75px;
+  padding: 10px;
+  margin-top: 20px;
+  margin-bottom: 35px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+}
+
+.billing-details input[type="radio"] {
+  margin-right: 5px;
+}
+
+.billing-details textarea {
+  height: 80px;
+  resize: vertical;
+}
+
+.order-summary .product-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.total-price {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 30px;
+  border-bottom: 0.5px solid #d9d9d9;
+}
+
+.total-price p {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.total-price span {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary-color);
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+}
+
+.submit-button button[type="submit"] {
+  width: 310px;
+  height: 60px;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 15px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.submit-button button[type="submit"]:hover {
+  border: 1px solid black;
+  background-color: black;
+  color: white;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 1);
+}
+
+.order-summary {
+  margin-top: 60px;
+  padding: 80px 35px 80px 35px;
+  height: 785px;
+}
+.product-total {
+  display: flex;
+  gap: 255px;
+}
+
+.product-total h1 {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.labels-radio {
+  margin: 20px 0 35px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}

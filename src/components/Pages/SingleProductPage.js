@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import "./SingleProductPage.css";
 import { useNavigate } from "react-router-dom";
@@ -11,10 +11,10 @@ import ProductImage5 from "./images/SingleProduct/img1.png";
 import ProductImage6 from "./images/SingleProduct/img1.png";
 import ProductImage7 from "./images/SingleProduct/img1.png";
 import ProductImage8 from "./images/SingleProduct/img1.png";
-import extraImg1 from "./images/SingleProduct/img2.png";
-import extraImg2 from "./images/SingleProduct/img3.png";
-import extraImg3 from "./images/SingleProduct/img4.png";
-import extraImg4 from "./images/SingleProduct/img5.png";
+import extraImg1 from "./images/SingleProduct/img1.png";
+import extraImg2 from "./images/SingleProduct/mainImg1.png";
+import extraImg3 from "./images/SingleProduct/img1.png";
+import extraImg4 from "./images/SingleProduct/mainImg1.png";
 import MainImg1 from "./images/SingleProduct/mainImg1.png";
 import MainImg2 from "./images/SingleProduct/mainImg2.png";
 
@@ -22,7 +22,8 @@ const products = [
   {
     id: 1,
     name: "Syltherine",
-    description:
+    description: "Stylish cafe chair",
+    detail:
       "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.",
     price: "Rp 2.500.000",
     oldPrice: "Rp 3.500.000",
@@ -41,7 +42,8 @@ const products = [
   {
     id: 2,
     name: "Leviosa",
-    description:
+    description: "Stylish cafe chair",
+    detail:
       "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.",
     price: "Rp 2.500.000",
     image: ProductImage2,
@@ -59,7 +61,8 @@ const products = [
   {
     id: 3,
     name: "Lolito",
-    description:
+    description: "Luxury big sofa",
+    detail:
       "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.",
     price: "Rp 7.000.000",
     oldPrice: "Rp 14.000.000",
@@ -78,7 +81,8 @@ const products = [
   {
     id: 4,
     name: "Respira",
-    description:
+    description: "Outdoor bar table and stool",
+    detail:
       "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.",
     price: "Rp 500.000",
     new: true,
@@ -97,7 +101,8 @@ const products = [
   {
     id: 5,
     name: "Grifo",
-    description:
+    description: "Night lamp",
+    detail:
       "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.",
     price: "Rp 1.500.000",
     image: ProductImage5,
@@ -115,7 +120,8 @@ const products = [
   {
     id: 6,
     name: "Muggo",
-    description:
+    description: "Small mug",
+    detail:
       "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.",
     price: "Rp 150.000",
     new: true,
@@ -133,7 +139,8 @@ const products = [
   {
     id: 7,
     name: "Pingky",
-    description:
+    description: "Cute bed set",
+    detail:
       "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.",
     price: "Rp 7.000.000",
     oldPrice: "Rp 14.000.000",
@@ -152,7 +159,8 @@ const products = [
   {
     id: 8,
     name: "Potty",
-    description:
+    description: "Minimalist flower pot",
+    detail:
       "Setting the bar as one of the loudest speakers in its class, the Kilburn is a compact, stout-hearted hero with a well-balanced audio which boasts a clear midrange and extended highs for a sound.",
     price: "Rp 500.000",
     new: true,
@@ -173,13 +181,21 @@ const SingleProductPage = () => {
   const { id } = useParams();
   const [value, setValue] = useState(1);
   const [activeTab, setActiveTab] = useState("description");
+  const [images, setImages] = useState([]); // Initialize with an empty array or placeholder
   const navigate = useNavigate();
 
   const product = products.find((product) => product.id === parseInt(id));
 
+  useEffect(() => {
+    if (product) {
+      setImages([product.image, ...product.extraImages]);
+    }
+  }, [product]);
+
   if (!product) {
     return <div>Product not found</div>;
   }
+
   const handleDecrement = () => {
     setValue((prevValue) => (prevValue > 0 ? prevValue - 1 : 0));
   };
@@ -192,21 +208,36 @@ const SingleProductPage = () => {
     navigate(`/product/${id}`);
   };
 
+  const swapImage = (index) => {
+    let updatedImages = [...images];
+    [updatedImages[0], updatedImages[index]] = [
+      updatedImages[index],
+      updatedImages[0],
+    ];
+    setImages(updatedImages);
+  };
+
   return (
     <>
-      {" "}
-      <Breadcrumb />
+      <div className="product-breadcrumb">
+        <Breadcrumb /> <span>| {product.name}</span>
+      </div>
+
       <div className="singleproductpage">
         <div className="product-info">
           <div className="product-img">
             <div className="detail-img">
-              <img src={product.extraImages[0]} alt="Product Detail" />
-              <img src={product.extraImages[1]} alt="Product Detail" />
-              <img src={product.extraImages[2]} alt="Product Detail" />
-              <img src={product.extraImages[3]} alt="Product Detail" />
+              {images.slice(1).map((img, index) => (
+                <img
+                  key={index}
+                  src={img}
+                  alt="Product Detail"
+                  onClick={() => swapImage(index + 1)}
+                />
+              ))}
             </div>
             <div className="main-img">
-              <img src={product.image} alt={product.name} />
+              <img src={images[0]} alt={product.name} />
             </div>
           </div>
         </div>
@@ -214,8 +245,8 @@ const SingleProductPage = () => {
         <div className="product-details">
           <h1>{product.name}</h1>
           <p className="Price">{product.price}</p>
-          <span className="rating">★★★★☆</span>
-          <p className="description">{product.description}</p>
+          <span className="rating">★★★★★</span>
+          <p className="description">{product.detail}</p>
 
           <div className="sizes">
             <p className="label">Size</p>
@@ -245,12 +276,6 @@ const SingleProductPage = () => {
             <button className="add-cart">Add To Cart</button>
             <button className="compare">Compare</button>
           </div>
-          {/* <div className="product-short-details">
-          <p>ProductCode: {product.id}</p>
-          <p>Category: {product.category}</p>
-          <p>Tags: {product.tags.join(", ")}</p>
-          <p>Share: {product.share}</p>
-        </div> */}
         </div>
       </div>
       <section className="Main-Description">
@@ -347,7 +372,7 @@ const SingleProductPage = () => {
           data-aos="fade-up"
           data-aos-anchor-placement="top-bottom"
         >
-          <h3>Our Products</h3>
+          <h3>Related Products</h3>
           <div className="products-grid">
             {products.slice(0, 4).map((product) => (
               <div
@@ -373,6 +398,7 @@ const SingleProductPage = () => {
                   </div>
                 </div>
                 <h4>{product.name}</h4>
+                <p>{product.description}</p>
                 <p className="product-price">{product.price}</p>
               </div>
             ))}

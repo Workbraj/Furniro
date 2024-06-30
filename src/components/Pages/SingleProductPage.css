@@ -7,10 +7,12 @@
   display: flex;
 }
 
-.breadcrumb {
+.product-breadcrumb {
   background-color: var(--secondary-color);
   padding: 35px 0 35px 100px;
+  display: flex;
   justify-content: flex-start;
+  margin: 0;
 }
 
 .product-info {
@@ -88,7 +90,7 @@ p {
   border-radius: 5px;
   font-size: 14px;
   cursor: pointer;
-  background-color: #f9f1e7;
+  background-color: var(--secondary-color);
 }
 
 .size-selected {
@@ -271,7 +273,7 @@ p {
 }
 
 .main-product-img1 {
-  background-color: #f9f1e7;
+  background-color: var(--secondary-color);
   height: 345px;
   width: 600px;
   margin-right: 30px;
@@ -279,148 +281,25 @@ p {
 }
 
 .main-product-img2 {
-  background-color: #f9f1e7;
+  background-color: var(--secondary-color);
   height: 345px;
   width: 600px;
   border-radius: 10px;
 }
-/* CSS for Products Section */
 
-.products-container {
-  text-align: center;
-  padding: 50px 0;
+.product-img img {
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
 
-.products-container h3 {
-  font-size: 30px;
-  color: #333;
-  margin-bottom: 30px;
-}
-
-.products-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-  justify-items: center;
-  padding: 60px;
-}
-
-.product-card {
-  background-color: #f4f5f7;
-  border: 1px solid #eee;
-  overflow: hidden;
-  position: relative;
-  text-align: left;
-  width: 100%;
-  height: 100%;
-  transition: box-shadow 0.3s, transform 0.3s;
-}
-
-.product-card:hover {
-  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-  transform: scale(1.02);
-}
-
-.product-image-container {
-  position: relative;
-  width: 100%;
-  height: 370px;
-  overflow: hidden;
-}
-
-.product-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.product-hover {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  color: white;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.product-card:hover .product-hover {
-  opacity: 1;
-}
-
-.add-to-cart {
-  background-color: #ffffff;
-  color: var(--primary-color);
-  border: none;
-  width: 200px;
-  padding: 10px 20px;
+.detail-img img {
   cursor: pointer;
-  font-size: 16px;
-  margin-bottom: 10px;
-  transition: 0.3s ease-in-out;
-  font-weight: 600;
 }
 
-.add-to-cart:hover {
-  background-color: var(--primary-color);
-  color: white;
+.detail-img img:hover {
+  transform: scale(1.1);
 }
 
-.hover-actions {
-  display: flex;
-  gap: 10px;
-  font-size: 12px;
-}
-
-.hover-actions span {
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-}
-
-.hover-actions span::before {
-  content: attr(data-icon);
-  margin-right: 5px;
-}
-
-.product-card h4 {
-  font-size: 18px;
-  color: #333;
-  margin: 15px 10px 5px;
-}
-
-.product-card p {
-  font-size: 16px;
-  color: #666;
-  margin: 5px 10px;
-}
-
-.product-price {
-  font-size: 18px;
-  color: #333;
-  margin: 10px 10px 15px;
-}
-
-.show-more {
-  color: var(--primary-color);
-  border: 1px solid var(--primary-color);
-  background-color: white;
-  padding: 10px 20px;
-  width: 170px;
-  cursor: pointer;
-  font-size: 16px;
-  margin-top: 20px;
-  transition: color 0.3s ease-in-out, background-color 0.3s ease,
-    border 0.3s ease;
-}
-
-.show-more:hover {
-  background-color: var(--primary-color);
-  color: white;
+.main-img img {
+  width: 100%;
+  height: auto;
 }
